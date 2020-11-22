@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+      "outDir": "./",
+      //"noImplicitAny": true,
+      // "module": "es6",
+      "target": "es5",
+      "allowJs": true,
+      "lib": ["es2018", "dom"],
+      "allowSyntheticDefaultImports": true
+    },
+    "include": [ "index.ts" ],
+    "exclude": [ "node_modules" ]
+  }
+        
