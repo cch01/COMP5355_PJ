@@ -13,7 +13,7 @@ const getCookiesFromPage = async () => {
           const page = await browser.newPage();
           await page.setDefaultTimeout(90000);
           console.log(`navigating to ${url} ...`)
-          await page.goto(url).catch(e => null);
+          await page.goto(url);
           await page.screenshot({path: index+'.png'});
           const data = await (page as any)._client.send('Network.getAllCookies');
           await browser.close();
@@ -21,11 +21,10 @@ const getCookiesFromPage = async () => {
           resolve(cookiesWithUrl);
         } catch (error) {
           console.error(error)
-
         }
       })
     })
-    await Promise.all(cookieGets).then(result => { resolve(result) }).catch((error) => { })
+    await Promise.all(cookieGets).then(result => { resolve(result) }).catch((error) => null)
   })
 }
 
