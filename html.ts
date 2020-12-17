@@ -31,6 +31,7 @@ export default class HTML {
           
             <h1>Cookie report</h1>
             <h2>Total Count: ${cookies.length}</h2>
+            <h2>Execution date: ${new Date()}</h2>
             ${HTML.generateTable(cookies)}
           </body>
         </html>`
